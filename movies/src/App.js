@@ -11,23 +11,25 @@ import MovieModal from "./Component/MovieModal";
 import { useState } from "react";
 
 function App() {
-  const { filteredMovies, setFilter, setfiletrating ,setMovies} =
-    useMoviefilter(MoviesArray);
+
+  const {movies, setMovies, setTitleFilter, setMinStarsFilter,
+  } = useMoviefilter(MoviesArray);
+
+  
  
 
-  const handleFilterChange = (e) => {
-    setFilter(e.target.value);
+  const handleTitleChange = (event) => {
+    setTitleFilter(event.target.value);
   };
 
-  const ratingChanged = (movierating) => {
-    setfiletrating(movierating);
+  const handleStarsChange = (newRating) => {
+    setMinStarsFilter(newRating);
   };
 
   const addHandler = (newMovie) => {
     console.log(newMovie);
-    setMovies([...filteredMovies, newMovie]);
-    console.log(filteredMovies)
-  };
+    setMovies([...movies, newMovie]);
+  }
 
   return (
     <div className="App">
@@ -38,20 +40,20 @@ function App() {
         <Form.Control
           type="text"
           placeholder="Enter name"
-          onChange={handleFilterChange}
+          onChange={handleTitleChange}
         />
       </Form.Group>
       <ReactStars
         count={5}
         size={60}
         color2={"#ffd700"}
-        onChange={ratingChanged}
+        onChange={handleStarsChange}
       />
 
       <div
         style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
       >
-        {filteredMovies.map((movie, key) => (
+        {movies.map((movie, key) => (
           <MovieCard {...movie} key={key} />
         ))}
       </div>

@@ -2,6 +2,7 @@ import Modal from "react-modal";
 import { Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
+import ReactStars from "react-stars";
 
 
 Modal.setAppElement('#root');
@@ -99,13 +100,15 @@ function MovieModal({addHandler}) {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>rating : </Form.Label>
-          <Form.Control
+          <ReactStars count={5} size={24} color2={"#ffd700"} value={rating} onChange={(newranting)=>{setRating(newranting)}}   />
+
+          {/* <Form.Control
             type="email"
             placeholder="Enter rating "
             onChange={(e) => {
               setRating(e.target.value);
             }}
-          />
+          /> */}
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Image url : </Form.Label>

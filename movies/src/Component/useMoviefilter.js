@@ -1,18 +1,41 @@
-import { useState } from "react";
-import MoviesArray from "./MoviesArray";
+import { useState, useEffect } from 'react';
 
-function useMoviefilter(movies) {
-  const [movie, setMovies] = useState(MoviesArray);
-  const [filter, setFilter] = useState("");
-  const [filterranting ,setfiletrating]=useState("");
+const useMoviefilter = (initialMovies) => {
+  const [movies, setMovies] = useState(initialMovies);
+  const [titleFilter, setTitleFilter] = useState('');
+  const [minStarsFilter, setMinStarsFilter] = useState(null);
 
-  const filteredMovies = movies.filter((movie) => {
-    return (
-       movie.name.toLowerCase().includes(filter.toLowerCase()) &&
-       movie.rating >= filterranting
-    );
-  });
-  return { filteredMovies, setFilter,setfiletrating ,setMovies };
-}
-// movie.rating==filter ||
+  useEffect(() => {
+    filterMovies();
+  }, [titleFilter, minStarsFilter]);
+
+  const filterMovies = () => {
+    let filteredMovies = initialMovies;
+
+    // Filter by title
+    if (titleFilter) {
+      filteredMovies = filteredMovies.filter(
+        (movie) => movie.name.toLowerCase().includes(titleFilter.toLowerCase())
+      );
+    }
+
+    // Filter by minimum stars
+    if (minStarsFilter !== null) {
+      filteredMovies = filteredMovies.filter(
+        (movie) => movie.rating >= minStarsFilter && movie.rating >= minStarsFilter 
+      );
+    }
+
+    // Update the movies state
+    setMovies(filteredMovies);
+  };
+
+  return {
+    movies,
+    setMovies,
+    setTitleFilter,
+    setMinStarsFilter,
+  };
+};
+
 export default useMoviefilter;
