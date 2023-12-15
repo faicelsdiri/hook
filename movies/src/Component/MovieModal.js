@@ -3,11 +3,13 @@ import { Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import ReactStars from "react-stars";
+import MoviesArray from "./MoviesArray";
+import { useNavigate } from "react-router";
 
 
 Modal.setAppElement('#root');
 
-function MovieModal({addHandler}) {
+function MovieModal() {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [type, setType] = useState("");
@@ -16,14 +18,23 @@ function MovieModal({addHandler}) {
   const [rating, setRating] = useState("");
   const [image, setImage] = useState("");
 
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(true);
+  const navigate = useNavigate()
+  const [ moviearray, setMoviesarray] = useState(MoviesArray);
+
+ 
+  const addHandler = (newMovie) => {
+    console.log(newMovie);
+    setMoviesarray([...moviearray, newMovie]);
+  }
 
   function openModal() {
     setIsOpen(true);
   }
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(true);
+    navigate(`/`)
   }
   function ADD() {
     const newMovie = {
@@ -38,14 +49,13 @@ function MovieModal({addHandler}) {
 
     addHandler(newMovie);
     closeModal();
+    navigate(`/`)
   }
 
   return (
     <>
       <br></br>
-      <Button variant="warning" onClick={openModal}>
-        ADD MOVIE{" "}
-      </Button>
+      
 
       <Modal isOpen={modalIsOpen}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

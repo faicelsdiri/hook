@@ -2,6 +2,7 @@ import { Card, CardGroup } from "react-bootstrap";
 import ReactStars from "react-stars";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
+import { useNavigate } from "react-router";
 
 function MovieCard({
   id,
@@ -12,8 +13,15 @@ function MovieCard({
   type,
   seasons,
   description,
-  details,
+  trailer,
 }) {
+  const navigate =useNavigate();
+
+  function clickcard() {
+    navigate(`/description/${id}`);
+
+  }
+  
   return (
     <>
       <CardGroup>
@@ -21,11 +29,12 @@ function MovieCard({
           style={{
             textAlign: "center",
             marginTop: "50px",
+            marginLeft: "20px",
             width: " 350px",
             height: "600px",
             backgroundColor: "GrayText",
           }}
-        >
+        onClick={clickcard}>
           <Card.Img
             variant="top"
             src={image}
@@ -37,7 +46,7 @@ function MovieCard({
             <Card.Text> {type} </Card.Text>
             <Card.Text> {seasons} </Card.Text>
             <Card.Text> {description} </Card.Text>
-            <Card.Text> {details} </Card.Text>
+            <Card.Text> {trailer} </Card.Text>
           </Card.Body>
           <Card.Footer className="text-muted" >
             <ReactStars count={5} size={24} color2={"#ffd700"} value={rating} edit ={false} style={{textAlign: "center"}}  />

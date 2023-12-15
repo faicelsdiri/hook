@@ -7,7 +7,8 @@ const MoviesArray = [
         date: "1976",
         type: "Crime | Drama",
         seasons: "2 seasons",
-        description: "A mentally unstable driver in Ned sleaze fuels his urge for violent action by attempting to liberate a presidential campaign worker and an underage prostitute."
+        description: "A mentally unstable driver in Ned sleaze fuels his urge for violent action by attempting to liberate a presidential campaign worker and an underage prostitute.",
+        trailer: "https://www.youtube.com/embed/_InqQJRqGW4?si=dwm5VOM3dLfZm971"
       },
       {
         id: 2,
@@ -19,7 +20,8 @@ const MoviesArray = [
         type: "Comedy | Drama",
         seasons: "4 seasons",
         description:
-          "A family determined to get their young daughter into the finals of a beauty pageant take a cross-country trip in their VW bus."
+          "A family determined to get their young daughter into the finals of a beauty pageant take a cross-country trip in their VW bus.",
+        trailer:"https://www.youtube.com/embed/xqj7XOv9mC8?si=oJ7-T0K0W21Xq7ZU"
       },
       {
         id: 3,
@@ -31,7 +33,8 @@ const MoviesArray = [
         type: "Comedy | Drama",
         seasons: "4 seasons",
         description:
-          "A family determined to get their young daughter into the finals of a beauty pageant take a cross-country trip in their VW bus."
+          "A family determined to get their young daughter into the finals of a beauty pageant take a cross-country trip in their VW bus.",
+        trailer:"https://www.youtube.com/embed/oZn3qSgmLqI?si=mt3tShlGtaUB7iSd"
       },
       {
         id: 4,
@@ -43,7 +46,8 @@ const MoviesArray = [
         type: "Action | Adventure",
         seasons: "5 seasons",
         description:
-          "In a self-destructing world, a vengeful Australian policeman sets out to stop a violent motorcycle gang."
+          "In a self-destructing world, a vengeful Australian policeman sets out to stop a violent motorcycle gang.",
+        trailer: "https://www.youtube.com/embed/zSWdZVtXT7E?si=t1PeFJGWU45zHLpL"
       },
       {
         id: 5,
@@ -55,7 +59,8 @@ const MoviesArray = [
         type: "Comedy | Drama",
         seasons: "4 seasons",
         description:
-          "A family determined to get their young daughter into the finals of a beauty pageant take a cross-country trip in their VW bus."
+          "A family determined to get their young daughter into the finals of a beauty pageant take a cross-country trip in their VW bus.",
+        trailer: "https://www.youtube.com/embed/0fUCuvNlOCg?si=fGYaWsh4oYUlzgcc"
       },
       {
         id: 6,
@@ -67,7 +72,9 @@ const MoviesArray = [
         type: "Action | Adventure",
         seasons: "5 seasons",
         description:
-          "In a self-destructing world, a vengeful Australian policeman sets out to stop a violent motorcycle gang."
+          "In a self-destructing world, a vengeful Australian policeman sets out to stop a violent motorcycle gang.",
+        trailer: "https://www.youtube.com/embed/_InqQJRqGW4?si=dwm5VOM3dLfZm971"
+
       },
       {
         id: 7,
@@ -80,7 +87,8 @@ const MoviesArray = [
         seasons: "2 seasons",
         description:
           "The lead character, called 'The Bride,' was a member of the Deadly Viper Assassination Squad, led by her lover 'Bill.'The Bride' decided to escape her life as a killer.",
-        details: "https://www.imdb.com/title/tt0266697/plotsummary?ref_=tt_stry_pl"
+        details: "https://www.imdb.com/title/tt0266697/plotsummary?ref_=tt_stry_pl",
+        trailer: "https://www.youtube.com/embed/0fUCuvNlOCg?si=fGYaWsh4oYUlzgcc"
       }
 
 ]
